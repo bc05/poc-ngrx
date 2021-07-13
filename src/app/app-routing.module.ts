@@ -1,10 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminLayoutComponent } from './layouts/admin/admin-layout/admin-layout.component';
+import { ListPostComponent } from './modules/post/pages/list-post/list-post.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: 'posts',
+        loadChildren: () =>
+          import('./modules/post/post.module').then((m) => m.PostModule),
+      },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
