@@ -1,1 +1,7 @@
-<p>create-post works!</p>
+<!-- <button (click)="increment()">Increment</button> -->
+
+<div>Current Count: {{ posts$ | async | json }}</div>
+
+<button (click)="addPost()">Add post</button>
+
+<!-- <button (click)="reset()">Reset Counter</button>  -->
