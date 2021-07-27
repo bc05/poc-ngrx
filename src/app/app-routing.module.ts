@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout/admin-layout.component';
-import { ListPostComponent } from './modules/post/pages/list-post/list-post.component';
+import { ListPostComponent } from './features/post/pages/list-post/list-post.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: 'posts',
         loadChildren: () =>
-          import('./modules/post/post.module').then((m) => m.PostModule),
+          import('./features/post/post.module').then((m) => m.PostModule),
       },
     ],
   },
