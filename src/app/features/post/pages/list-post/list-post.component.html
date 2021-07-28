@@ -1,1 +1,5 @@
-<p>list-post works!</p>
+<h1>Lista de Posts</h1>
+
+<ul>
+  <li *ngFor="let post of posts$ | async">{{ post.title }}</li>
+</ul>
